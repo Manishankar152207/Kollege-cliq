@@ -1,0 +1,144 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block title %}User | Dashboard{% endblock %}
+{% block content %} 
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Users Tables
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Users</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">         
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <div class="box-footer no-padding">
+              <div class="mailbox-controls">
+                <!-- Check all button -->
+                <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>
+                <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                <button class="btn btn-default btn-sm" onclick=""><i class="fa fa-fw fa-user"></i></button> 
+                <button class="btn btn-default btn-sm" onclick=""><i class="fa fa-fw fa-user-times"></i></button>                      
+                <button class="btn btn-default btn-sm" onclick="window.location.reload();"><i class="fa fa-refresh"></i></button>
+                <!-- <button class="btn btn-default btn-sm" onclick="addCategory();"><i class="fa fa-fw fa-plus"></i></button>                       -->
+              </div>
+            </div>
+            <div class="box-tools">
+              <div class="input-group " style="width: 150px;">
+                <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" style="margin-top: 10px;">
+                <div class="input-group-btn">
+                  <button class="btn btn-sm btn-default" style="margin-top: 10px;"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box-body table-responsive no-padding" style="margin-top: -5px;">
+            <table class="table table-hover user-checkbox">
+              <tr>
+                <th></th>
+                <th>ID</th>
+                <th>User</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td><input class="cat-checkbox" type="checkbox" name="checkbox" datas="B-Tech" hlink="read-mail.html" value="check1" ></td>
+                <td>183</td>
+                <td>John Doe</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-success">Approved</span></td>
+              </tr>
+              <tr>
+                <td><input class="cat-checkbox" type="checkbox" name="checkbox" datas="B-Tech" hlink="read-mail.html" value="check1" ></td>
+                <td>219</td>
+                <td>Alexander Pierce</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-warning">Pending</span></td>
+              </tr>
+              <tr>
+                <td><input class="cat-checkbox" type="checkbox" name="checkbox" datas="B-Tech" hlink="read-mail.html" value="check1" ></td>
+                <td>657</td>
+                <td>Bob Doe</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-primary">Approved</span></td>
+              </tr>
+              <tr>
+                <td><input class="cat-checkbox" type="checkbox" name="checkbox" datas="B-Tech" hlink="read-mail.html" value="check1" ></td>
+                <td>175</td>
+                <td>Mike Doe</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-danger">Denied</span></td>
+              </tr>
+              <tr>
+                <td><input class="cat-checkbox" type="checkbox" name="checkbox" datas="B-Tech" hlink="read-mail.html" value="check1" ></td>
+                <td>175</td>
+                <td>Mike Doe</td>
+                <td>11-7-2014</td>
+                <td><span class="label label-danger">Denied</span></td>
+              </tr>
+            </table>
+          </div><!-- /.box-body -->
+          <div class="box-footer no-padding">
+            <div class="mailbox-controls">
+              <!-- Check all button -->
+              <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>
+              <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+              <button class="btn btn-default btn-sm" onclick=""><i class="fa fa-fw fa-user"></i></button> 
+              <button class="btn btn-default btn-sm" onclick=""><i class="fa fa-fw fa-user-times"></i></button>                      
+              <button class="btn btn-default btn-sm" onclick="window.location.reload();"><i class="fa fa-refresh"></i></button>
+              <!-- <button class="btn btn-default btn-sm" onclick="addCategory();"><i class="fa fa-fw fa-plus"></i></button> -->
+              <div class="pull-right">
+                1-50/200
+                <div class="btn-group">
+                  <button class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                  <button class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                </div><!-- /.btn-group -->
+              </div><!-- /.pull-right -->
+            </div>
+          </div>
+        </div><!-- /.box -->
+      </div>
+    </div>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+{% endblock %}
+{% block javascript %}
+    <!-- iCheck -->
+    <script src="{% static 'plugins/iCheck/icheck.min.js' %}"></script>
+    <script>
+       $(function () {
+        //Enable iCheck plugin for checkboxes
+        //iCheck for checkbox and radio inputs
+        $('.mailbox-messages input[type="checkbox"]').iCheck({
+          checkboxClass: 'icheckbox_flat-blue',
+          radioClass: 'iradio_flat-blue'
+        });
+
+        //Enable check and uncheck all functionality
+        $(".checkbox-toggle").click(function () {
+          var clicks = $(this).data('clicks');
+          if (clicks) {
+            //Uncheck all checkboxes
+            $(".user-checkbox input[type='checkbox']").iCheck("uncheck");
+            $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
+          } else {
+            //Check all checkboxes
+            $(".user-checkbox input[type='checkbox']").iCheck("check");
+            $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
+          }
+          $(this).data("clicks", !clicks);
+        });
+       
+      });
+    </script>
+    {% endblock %}
+      

@@ -1,0 +1,192 @@
+{% extends 'kollegecliq/base.html' %}
+{% load static %}
+{% block title %}Apply | kollegecliq{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/style.min.css' %}">{% endblock %}
+{% block content %} 
+<main class="main main-test">
+    <div class="container checkout-container">
+        <ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
+            <li>
+                <a href="cart.html">college</a>
+            </li>
+            <li class="active">
+                <a href="checkout.html">Apply</a>
+            </li>
+        </ul>
+
+        
+
+        <!-- <div class="checkout-discount">
+            <h4>Have a coupon?
+                <button data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" class="btn btn-link btn-toggle">ENTER YOUR CODE</button>
+            </h4>
+
+            <div id="collapseTwo" class="collapse">
+                <div class="feature-box">
+                    <div class="feature-box-content">
+                        <p>If you have a coupon code, please apply it below.</p>
+
+                        <form action="#">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm w-auto" placeholder="Coupon code" required="" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-sm mt-0" type="submit">
+                                        Apply Coupon
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-lg-7">
+                <ul class="checkout-steps">
+                    <li>
+                        <h2 class="step-title">Apply</h2>
+
+                        <form action="#" id="checkout-form">
+                            <div class="form-group">
+                                <label>Your Name
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="text" class="form-control" required />
+                            </div>
+                            
+                            <div class="select-custom">
+                                <label>Interested Course
+                                    <abbr class="required" title="required">*</abbr></label>
+                                <select name="orderby" class="form-control">
+                                    <option value="" selected="selected">B-Tech
+                                    </option>
+                                    <option value="1">M-tech</option>
+                                    <option value="2">BBA</option>
+                                    <option value="3">MBA</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>College name</label>
+                                <input type="text" class="form-control" />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone <abbr class="required" title="required">*</abbr></label>
+                                <input type="tel" class="form-control" required />
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email address
+                                    <abbr class="required" title="required">*</abbr></label>
+                                <input type="email" class="form-control" required />
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="order-summary">
+                    <h3>YOUR DETAILS</h3>
+
+                    <table class="table table-mini-cart">  
+                        <thead>
+                            <tr>
+                                <th colspan="2">Verify your details</th>
+                            </tr>
+                        </thead>                              
+                        <tbody>
+                            <tr>
+                                <td class="product-col">
+                                    <h3 class="product-title">
+                                        Name
+                                    </h3>
+                                </td>
+
+                                <td class="price-col">
+                                    <span>Manish jaiswal</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="product-col">
+                                    <h3 class="product-title">
+                                        Interested Course
+                                    </h3>
+                                </td>
+
+                                <td class="price-col">
+                                    <span>B-tech</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-col">
+                                    <h3 class="product-title">
+                                        College Name
+                                    </h3>
+                                </td>
+
+                                <td class="price-col">
+                                    <span>Tula's Institute</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-col">
+                                    <h3 class="product-title">
+                                        Address
+                                    </h3>
+                                </td>
+
+                                <td class="price-col">
+                                    <span>Sukrali, Matabala gali, Gurgaon</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-col">
+                                    <h3 class="product-title">
+                                        Phone
+                                    </h3>
+                                </td>
+
+                                <td class="price-col">
+                                    <span>+9776398685806</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-col">
+                                    <h3 class="product-title">
+                                        E-mail
+                                    </h3>
+                                </td>
+
+                                <td class="price-col">
+                                    <span>csmanishankar@gmail.com</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- <div class="payment-methods">
+                        <h4 class="">Payment methods</h4>
+                        <div class="info-box with-icon p-0">
+                            <p>
+                                Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.
+                            </p>
+                        </div>
+                    </div> -->
+
+                    <button type="submit" class="btn btn-dark btn-place-order" form="checkout-form">
+                        Apply
+                    </button>
+                </div>
+                <!-- End .cart-summary -->
+            </div>
+            <!-- End .col-lg-4 -->
+        </div>
+        <!-- End .row -->
+    </div>
+    <!-- End .container -->
+</main>
+<!-- End .main -->
+{% endblock %} 
